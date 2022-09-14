@@ -1,0 +1,382 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--charcoal);
+    color: var(--cultured);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.35;
+
+    --dodger-blue: #0496ffff;
+    --charcoal: #2c4251ff;
+    --fuzzy-wuzzy: #d16666ff;
+    --cultured: #edf2f4ff;
+    --honey-yellow: #f6ae2dff;
+
+    --dodger-blue-30: #0496ff48;
+    --charcoal-30: #2c425148;
+    --fuzzy-wuzzy-30: #d1666648;
+    --cultured-30: #edf2f448;
+    --honey-yellow-30: #f6ae2d48;
+
+    --dodger-blue-70: #0496ffaf;
+    --charcoal-70: #2c4251af;
+    --fuzzy-wuzzy-70: #d16666af;
+    --cultured-70: #edf2f4af;
+    --honey-yellow-70: #f6ae2daf;
+
+    --shadow: 0 0.125em 0.25em var(--charcoal);;
+}
+
+main {
+    position: relative;
+}
+
+nav {
+    position: sticky;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    background: #00000033;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem 3rem;
+    color: var(--cultured);
+    text-decoration: none;
+    text-shadow: var(--shadow);
+    font-size: 1.5rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 1rem;
+}
+
+section .section-title {
+    font-size: 3rem;
+    margin: 5rem 0;
+    padding: 0 1rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: calc(100% - 2rem);
+    text-align: center;
+}
+
+section .section-title::after {
+    content: "";
+    
+    position: absolute;
+    display: block;
+    bottom: -1rem;
+    right: 45%;
+    left: 45%;
+    height: 0.25rem;
+    background-color: var(--dodger-blue);
+}
+
+#concert {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: calc(100vh - 10rem);
+    padding: 3rem 1rem;
+}
+
+#concert h1 {
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: var(--shadow);
+    max-width: 40rem;
+    margin: 1rem auto;
+}
+
+#concert .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#concert .box {
+    position: relative;
+    border: 0.125rem solid var(--cultured);
+    margin: 3rem;
+    padding: 1rem 2rem;
+    min-width: 30rem;
+}
+
+#concert .icon {
+    position: absolute;
+    background-color: var(--cultured);
+    top: -3.25rem;
+    right: -3.25rem;
+    padding: 1rem;
+    border-radius: 4rem;
+    border: 0.25rem solid var(--charcoal);
+    box-shadow: var(--shadow);
+}
+
+#concert .icon img {
+    display: block;
+    width: 4rem;
+}
+
+#concert .title {
+    position: relative;
+    display: block;
+    font-size: 1.2rem;
+    text-shadow: var(--shadow);
+    top: -0.5rem;
+}
+
+#concert .value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: var(--shadow);
+    text-align: center;
+}
+
+#concert .available {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+#concert .available .value {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+#concert .available .value::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -0.5rem;
+    right: 0;
+    left: 0;
+    height: 0.25rem;
+    background-color: var(--fuzzy-wuzzy);
+}
+
+#concert_background {
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100vh;
+}
+
+#concert_background video {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#schedule .content {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#schedule .content li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    position: relative;
+    margin: 1rem 0;
+    padding: 3rem;
+    min-height: 40vh;
+    background: linear-gradient(var(--dodger-blue-30), var(--honey-yellow-30), var(--charcoal-30)), var(--photo) no-repeat fixed;
+    background-size: cover;
+    text-shadow: var(--shadow);
+}
+
+#schedule .content li:last-child {
+    margin-bottom: 0;
+}
+
+#schedule .content .time {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 5rem;
+    top: 0.65rem;
+}
+
+#schedule .content .artist {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 5rem;
+}
+
+#tickets {
+    background-color: var(--dodger-blue);
+    padding-top: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tickets .section-title::after {
+    background-color: var(--fuzzy-wuzzy);
+}
+
+#tickets p {
+    font-size: 1.3rem;
+}
+
+#tickets a {
+    display: block;
+    padding: 3rem;
+    background-color: var(--honey-yellow);
+    color: var(--charcoal);
+    max-width: 30rem;
+    margin: 2rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-weight: 300;
+    padding-bottom: 4rem;
+}
+
+#tickets a img {
+    height: 2em;
+    position: relative;
+    bottom: -0.3em;
+}
+
+#testimonials {
+    padding: 1rem 0;
+    background: linear-gradient(var(--fuzzy-wuzzy-30), var(--charcoal-30)), url(resources/images/concert/anthony-delanoix-hzgs56Ze49s-unsplash.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+#testimonials .quote {
+    margin: 1rem auto;
+    padding: 2rem;
+    background-color: var(--charcoal-70);
+    color: var(--cultured);
+    max-width: 47rem;
+    text-shadow: var(--shadow);
+    
+}
+
+#faq .content {
+    max-width: 47rem;
+    margin: 1rem auto;
+    padding-bottom: 3rem;
+}
+
+#faq .divider {
+    display: block;
+    margin: 1rem 0;
+    height: 0.25rem;
+    width: 3rem;
+    background-color: var(--honey-yellow);
+}
+
+#faq em {
+    font-style: normal;
+    color: var(--fuzzy-wuzzy);
+}
+
+@media screen and (max-width: 1000px)  {
+    nav ul li a {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    #schedule .content li {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+
+    #schedule .content .time {
+        justify-content: left;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #concert {
+        min-height: calc(100vh - 9.5rem);
+    }
+
+    #concert h1 {
+        display: none;
+    }
+
+    #concert .box-container {
+        justify-content: stretch;
+    }
+
+    #concert .box {
+        min-width: unset;
+        width: 100%;
+        margin: 1rem;
+    }
+
+    #concert .title {
+        font-size: 1rem;
+    }
+
+    #concert .value {
+        font-size: 1.2rem;
+    }
+
+    #concert .icon {
+        padding: 0.5rem;
+        border-width: 0.125rem;
+        top: -1.625rem;
+        right: -1.625rem;
+    }
+
+    #concert .icon img {
+        width: 2rem;
+    }
+
+    #schedule .content .time, #schedule .content .artist {
+        font-size: 2.5rem;
+    }
+
+    #schedule .content .artist {
+        margin-top: 0;
+        margin-bottom: auto;
+    }
+
+    #tickets a img {
+        display: block;
+        margin: 0 auto 1rem;
+    }
+}
